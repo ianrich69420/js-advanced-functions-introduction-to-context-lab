@@ -76,3 +76,11 @@ function allWagesFor(record) {
 function findEmployeeByFirstName(srcArray, inputName) {
     return srcArray.find(obj => obj.firstName === inputName)
 }
+
+function calculatePayroll(employeeRecords) {
+    let employeeWages = []
+    employeeRecords.forEach(record => employeeWages.push(allWagesFor(record)));
+
+    let sum = (accumulator, currentValue) => accumulator + currentValue;
+    return employeeWages.reduce(sum);
+}
